@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JeftonMc — rasmiy sayt</title>
+<meta name="description" content="JeftonMc rasmiy sayti. YouTube kanali (570+ obunachi), Telegram kanali, Discord serveri va eng so'nggi videolar.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="JeftonMc — rasmiy sayt">
+<meta property="og:description" content="YouTube, Telegram, Discord va eng yangi videolar.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="avatar.jpg">
+<meta name="theme-color" content="#ffffff">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"JeftonMc","alternateName":["Jefton Mc","JeftonMc rasmiy sayt"],
+ "sameAs":["https://www.youtube.com/JeftonMc","https://t.me/JeftonMc","https://discord.gg/3c2vWVPdvE"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafafa; --card:#ffffff; --ink:#111418; --muted:#6b7280; --line:#e6e8eb; --accent:#2f6bff;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0e1013; --card:#15181d; --ink:#f2f4f7; --muted:#8b93a1; --line:#242932; --accent:#6c93ff; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.5;
+  padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+.wrap{max-width:620px;margin:0 auto;padding:56px 20px 64px}
+
+/* profile */
+.profile{text-align:center;margin-bottom:36px}
+.avatar{
+  width:112px;height:112px;border-radius:50%;margin:0 auto 18px;overflow:hidden;
+  background:var(--line);box-shadow:0 0 0 1px var(--line);display:grid;place-items:center;
+  font-size:44px;font-weight:700;color:var(--muted);
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+h1{margin:0;font-size:30px;font-weight:700;letter-spacing:-.02em}
+.subs{margin:6px 0 0;color:var(--muted);font-size:15px}
+
+/* links */
+.links{display:grid;gap:10px;margin-bottom:48px}
+.link{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;
+  font-weight:600;font-size:16px;transition:border-color .15s,transform .15s;
+}
+.link:hover{border-color:var(--accent)}
+.link:active{transform:scale(.99)}
+.link span{color:var(--muted);font-weight:400;font-size:14px}
+
+/* videos */
+h2{margin:0 0 14px;font-size:15px;font-weight:600;color:var(--muted)}
+.videos{display:grid;gap:14px}
+.video{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .15s}
+.video:hover{border-color:var(--accent)}
+.video .thumb{aspect-ratio:16/9;background:var(--line)}
+.video img{width:100%;height:100%;object-fit:cover;display:block}
+.video .meta{padding:12px 16px 14px}
+.video b{display:block;font-size:15px;font-weight:600;line-height:1.35}
+.video small{display:block;margin-top:4px;color:var(--muted);font-size:13px}
+.badge{color:var(--accent);font-weight:600}
+.more{display:grid;gap:10px}
+.empty{padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:15px;text-align:center}
+.empty a{color:var(--accent);font-weight:600}
+footer{margin-top:48px;text-align:center;color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="profile">
+    <div class="avatar" id="avatar">
+      <img src="avatar.jpg" alt="JeftonMc" width="112" height="112"
+           onerror="this.remove();document.getElementById('avatar').textContent='J'">
+    </div>
+    <h1>JeftonMc</h1>
+    <p class="subs" id="subs">570+ obunachi</p>
+  </header>
+
+  <nav class="links" aria-label="Havolalar">
+    <a class="link" href="https://www.youtube.com/JeftonMc" target="_blank" rel="noopener">YouTube <span>Videolar</span></a>
+    <a class="link" href="https://t.me/JeftonMc" target="_blank" rel="noopener">Telegram <span>@JeftonMc</span></a>
+    <a class="link" href="https://discord.gg/3c2vWVPdvE" target="_blank" rel="noopener">Discord <span>Serverga qo'shilish</span></a>
+  </nav>
+
+  <section aria-labelledby="vh">
+    <h2 id="vh">So'nggi videolar</h2>
+    <div class="videos" id="videos"><div class="empty">Yuklanmoqda…</div></div>
+  </section>
+
+  <footer>© JeftonMc</footer>
+</main>
+
+<script>
+const CHANNEL_ID = "UC3aiPcI0djgoD2EIqpWUIbQ";
+
+const box = document.getElementById('videos');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function fallback(){
+  box.innerHTML = '<div class="empty">Videolarni <a href="https://www.youtube.com/JeftonMc" target="_blank" rel="noopener">YouTube kanalda</a> ko\'ring.</div>';
+}
+
+function card(v, i){
+  const id = (v.guid||'').split(':').pop() || (v.link.split('v=')[1]||'');
+  const date = new Date(v.pubDate.replace(' ','T')+'Z').toLocaleDateString('uz-UZ',{day:'numeric',month:'long',year:'numeric'});
+  return '<a class="video" target="_blank" rel="noopener" href="'+esc(v.link)+'">'
+    + '<div class="thumb"><img loading="'+(i?'lazy':'eager')+'" alt="" src="https://i.ytimg.com/vi/'+esc(id)+'/hqdefault.jpg"></div>'
+    + '<div class="meta"><b>'+esc(v.title)+'</b><small>'+(i===0?'<span class="badge">Yangi</span> · ':'')+date+'</small></div></a>';
+}
+
+async function load(){
+  try{
+    const feed = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
+    const r = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed));
+    const d = await r.json();
+    if(!d.items || !d.items.length){ fallback(); return; }
+    box.innerHTML = d.items.slice(0,5).map(card).join('');
+  }catch(e){ fallback(); }
+}
+load();
+</script>
+</body>
+</html>
